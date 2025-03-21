@@ -12,7 +12,7 @@ export function Toaster() {
         <Toast key={id} {...props} style={{ marginTop: "10px", width: "240px" }}>
           <div className="grid gap-1">
             {title && <ToastTitle>{title}</ToastTitle>}
-            {description && <ToastDescription className="text-gray-900">{description}</ToastDescription>}
+            {description && <ToastDescription className="text-gray-900 dark:text-gray-300">{description}</ToastDescription>}
           </div>
           {action}
           <ToastClose />
