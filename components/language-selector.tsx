@@ -73,8 +73,8 @@ export default function LanguageSelector() {
         </span>
         <ChevronDown
           size={16}
-          className={`transition-transform duration-200 ${isDark ? "text-white/70" : "text-gray-600"
-            } ${isOpen ? "rotate-180" : ""}`}
+          className={`transition-transform duration-200 text-[rgba(255,165,126,1)]
+             ${isOpen ? "rotate-180" : ""}`}
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent
@@ -102,8 +102,8 @@ export default function LanguageSelector() {
               }}
             >
               <div className={`flex items-center px-0 justify-center h-8 w-8 rounded-full ${isDark
-                ? "bg-[rgba(255,255,255,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset]"
-                : "bg-[rgba(0,0,0,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.1)_inset]"
+                ? "bg-[rgba(255,255,255,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)]"
+                : "bg-[rgba(0,0,0,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.1)]"
                 }`}>
                 <Flag countryCode={language.flag} />
               </div>
