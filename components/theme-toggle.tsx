@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   return (
     <div className="flex items-center">
       <button
-        className="relative flex items-center justify-between transition-all duration-200"
+        className="relative flex items-center justify-between "
         style={{
           width: "60px",
           height: "20px",
@@ -35,7 +35,7 @@ export default function ThemeToggle() {
       >
         {/* Icono de luna */}
         <div
-          className="flex items-center justify-center transition-all duration-200"
+          className="flex items-center justify-center"
           style={{
             position: "absolute",
             left: "-15px",
@@ -60,7 +60,7 @@ export default function ThemeToggle() {
           }}
         >
           <div
-            className="flex items-center justify-center p-5 dark:[background:linear-gradient(142deg,var(--neutral-neutral-250,rgba(248,248,248,0.20))_0%,var(--neutral-neutral-220,rgba(248,248,248,0.08))_44.62%)] rounded-full w-6 h-6 z-0 transition-all duration-200"
+            className="flex items-center justify-center p-5 dark:[background:linear-gradient(142deg,var(--neutral-neutral-250,rgba(248,248,248,0.20))_0%,var(--neutral-neutral-220,rgba(248,248,248,0.08))_44.62%)] rounded-full w-6 h-6 z-0 "
             style={{
               display: !isDark ? "none" : "flex",
             }}
@@ -79,7 +79,7 @@ export default function ThemeToggle() {
 
         {/* Icono de sol */}
         <div
-          className="flex items-center justify-center transition-transform duration-200"
+          className="flex items-center justify-center"
           style={{
             position: "absolute",
             right: "-15px",
