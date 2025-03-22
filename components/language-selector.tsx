@@ -6,13 +6,22 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useTheme } from "@/contexts/theme-context"
 
 const languages = [
-  { code: "en", name: "English", flag: "🇬🇧" },
-  { code: "de", name: "Deutsch", flag: "🇩🇪" },
-  { code: "pl", name: "Polski", flag: "🇵🇱" },
-  { code: "pt", name: "Português", flag: "🇵🇹" },
-  { code: "ru", name: "Русский", flag: "🇷🇺" },
-  { code: "es", name: "Español", flag: "🇪🇸" },
+  { code: "en", name: "English", flag: "GB" },
+  { code: "de", name: "Deutsch", flag: "DE" },
+  { code: "pl", name: "Polish", flag: "PL" },
+  { code: "pt", name: "Portugues", flag: "PT" },
+  { code: "ru", name: "Русский", flag: "RU" },
+  { code: "es", name: "Espanol", flag: "ES" },
 ]
+
+// Función para convertir código de país a emoji de bandera
+const getFlagEmoji = (countryCode: string) => {
+  const codePoints = countryCode
+    .toUpperCase()
+    .split('')
+    .map((char: string) => 127397 + char.charCodeAt(0));
+  return String.fromCodePoint(...codePoints);
+}
 
 export default function LanguageSelector() {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0])
@@ -20,44 +29,89 @@ export default function LanguageSelector() {
   const { theme } = useTheme()
   const isDark = theme === "dark"
 
+  // Componente de bandera mejorado con dimensiones fijas para evitar saltos
+  const Flag = ({ countryCode }: { countryCode: string }) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageError, setImageError] = useState(false);
+
+    return (
+      <div className="relative h-5 w-7 flex items-center justify-center">
+        {!imageError && (
+          <img
+            src={`/flags/${countryCode.toLowerCase()}.svg`}
+            alt={`${countryCode} flag`}
+            className={`absolute inset-0 h-full w-full object-contain rounded-sm transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        )}
+        {(!imageLoaded || imageError) && (
+          <span className="text-lg">{getFlagEmoji(countryCode)}</span>
+        )}
+      </div>
+    );
+  };
+
   return (
     <DropdownMenu open={isOpen} onOpenChange={setIsOpen}>
       <DropdownMenuTrigger
-        className={`flex items-center gap-1 px-3 py-1.5 rounded-full border transition-colors duration-200 ${
-          isDark ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-gray-800"
-        }`}
+        className={`group flex items-center gap-2 pr-3 transition-all duration-200 rounded-[32px] outline-none focus:outline-none focus-visible:outline-none ${isDark
+          ? "bg-[rgba(40,40,40,0.00)] hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] backdrop-blur-[50px]"
+          : "bg-[rgba(255,255,255,0.00)] hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] backdrop-blur-[50px]"
+          }`}
+        aria-label="Select language"
       >
-        <span className="text-base">{selectedLanguage.flag}</span>
-        <span className="text-sm font-medium">{selectedLanguage.code.toUpperCase()}</span>
+        <div className={`flex items-center px-0 justify-center transition-all duration-200 rounded-full h-10 w-10 ${isDark
+          ? "bg-[rgba(40,40,40,0.70)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset,2px_4px_16px_0px_rgba(248,248,248,0.06)_inset]"
+          : "bg-[rgba(255,255,255,0.80)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.10),2px_4px_16px_0px_rgba(0,0,0,0.06)]"
+          }`}
+        >
+          <Flag countryCode={selectedLanguage.flag} />
+        </div>
+        <span className={`text-sm font-medium ${isDark ? "text-white" : "text-gray-900"}`}>
+          {selectedLanguage.code.toUpperCase()}
+        </span>
         <ChevronDown
-          size={14}
-          className={`transition-transform duration-200 ${
-            isDark ? "text-gray-400" : "text-gray-500"
-          } ${isOpen ? "rotate-180" : ""}`}
+          size={16}
+          className={`transition-transform duration-200 ${isDark ? "text-white/70" : "text-gray-600"
+            } ${isOpen ? "rotate-180" : ""}`}
         />
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className={`rounded-lg w-40 p-1 mt-1 border transition-colors duration-200 ${
-          isDark ? "bg-gray-800 border-gray-700 text-white" : "bg-white border-gray-200 text-black"
-        }`}
+        className={`rounded-[20px] w-56 mt-2 px-0 transition-all duration-200 ${isDark
+          ? "bg-[rgba(40,40,40,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset,2px_4px_16px_0px_rgba(248,248,248,0.06)_inset]"
+          : "bg-[rgba(255,255,255,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.10),2px_4px_16px_0px_rgba(0,0,0,0.06)]"
+          }`}
       >
-        {languages.map((language) => (
-          <DropdownMenuItem
-            key={language.code}
-            className={`flex items-center gap-2 px-3 py-2 cursor-pointer rounded transition-colors duration-200 ${
-              isDark ? "hover:bg-gray-700" : "hover:bg-gray-50"
-            }`}
-            onClick={() => {
-              setSelectedLanguage(language)
-              setIsOpen(false)
-            }}
-          >
-            <span className="text-lg">{language.flag}</span>
-            <span className="text-sm">{language.name}</span>
-          </DropdownMenuItem>
-        ))}
+        <div className="py-2">
+          {languages.map((language) => (
+            <DropdownMenuItem
+              key={language.code}
+              className={`flex items-center justify-start gap-3 px-4 py-2.5 cursor-pointer transition-all duration-200 ${selectedLanguage.code === language.code
+                ? isDark
+                  ? "bg-[linear-gradient(118deg,rgba(255,165,126,0.22)_17.51%,rgba(255,255,255,0.00)_80%)]"
+                  : "bg-[linear-gradient(118deg,rgba(255,165,126,0.22)_17.51%,rgba(255,255,255,0.00)_80%)]"
+                : ""
+                } ${isDark
+                  ? "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white"
+                  : "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
+                } rounded-[16px] w-full`}
+              onClick={() => {
+                setSelectedLanguage(language)
+                setIsOpen(false)
+              }}
+            >
+              <div className={`flex items-center px-0 justify-center h-8 w-8 rounded-full ${isDark
+                ? "bg-[rgba(255,255,255,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset]"
+                : "bg-[rgba(0,0,0,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.1)_inset]"
+                }`}>
+                <Flag countryCode={language.flag} />
+              </div>
+              <span className="text-sm font-medium">{language.name}</span>
+            </DropdownMenuItem>
+          ))}
+        </div>
       </DropdownMenuContent>
     </DropdownMenu>
   )
 }
-
