@@ -4,8 +4,8 @@ import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
 import { X } from "lucide-react"
-
 import { cn } from "@/lib/utils"
+import { useTheme } from "@/contexts/theme-context"
 
 const Sheet = SheetPrimitive.Root
 
@@ -51,27 +51,36 @@ const sheetVariants = cva(
 
 interface SheetContentProps
   extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
-  VariantProps<typeof sheetVariants> { }
+  VariantProps<typeof sheetVariants> {
+  isDark?: boolean
+}
 
 const SheetContent = React.forwardRef<
   React.ElementRef<typeof SheetPrimitive.Content>,
   SheetContentProps
->(({ side = "right", className, children, ...props }, ref) => (
-  <SheetPortal>
-    <SheetOverlay />
-    <SheetPrimitive.Content
-      ref={ref}
-      className={cn(sheetVariants({ side }), className)}
-      {...props}
-    >
-      {children}
-      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
-        <X className="h-4 w-4" />
-        <span className="sr-only">Close</span>
-      </SheetPrimitive.Close>
-    </SheetPrimitive.Content>
-  </SheetPortal>
-))
+>(({ side = "right", className, children, isDark = false, ...props }, ref) => {
+  return (
+    <SheetPortal>
+      <SheetOverlay />
+      <SheetPrimitive.Content
+        ref={ref}
+        className={cn(sheetVariants({ side }), className)}
+        {...props}
+      >
+        {children}
+        <SheetPrimitive.Close
+          className={`absolute right-4 top-4 rounded-[48px] p-2 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none ${isDark
+            ? "[background:radial-gradient(circle_45px_at_bottom,rgba(40,40,40,0.00)_60%,rgba(248,248,248,0.20)_86%)] shadow-[inset_0px_2px_2px_0px_rgba(248,248,248,0.08),inset_2px_4px_16px_0px_rgba(248,248,248,0.06)] backdrop-blur-[50px]"
+            : "border border-white/40 [background:linear-gradient(142deg,#F8F8F8_0%,rgba(248,248,248,0.40)_44.62%)] [box-shadow:0px_24px_24px_-16px_rgba(5,5,5,0.09),0px_6px_12px_0px_rgba(5,5,5,0.10),0px_4px_4px_-4px_rgba(5,5,5,0.10),0px_0.5px_1.5px_-4px_rgba(5,5,5,0.50)]"
+            }`}
+        >
+          <X className={`h-4 w-4 ${isDark ? "text-white" : "text-gray-900"}`} />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
+      </SheetPrimitive.Content>
+    </SheetPortal>
+  )
+})
 SheetContent.displayName = SheetPrimitive.Content.displayName
 
 const SheetHeader = ({

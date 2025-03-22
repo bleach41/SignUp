@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   return (
     <div className="flex items-center">
       <button
-        className="relative flex items-center justify-between"
+        className="relative flex items-center justify-between transition-all duration-200"
         style={{
           width: "60px",
           height: "20px",
@@ -24,7 +24,7 @@ export default function ThemeToggle() {
             linear-gradient(180deg, rgba(248, 248, 248, 0.03) 0%, rgba(248, 248, 248, 0.01) 79.79%)
           `
             : `
-              linear-gradient(45deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.80) 100%),
+              linear-gradient(45deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%),
             linear-gradient(180deg, rgba(248, 248, 248, 0.90) 0%, rgba(248, 248, 248, 0.9) 79.79%)
           `,
           backdropFilter: "blur(10px)",
@@ -35,7 +35,7 @@ export default function ThemeToggle() {
       >
         {/* Icono de luna */}
         <div
-          className="flex items-center justify-center"
+          className="flex items-center justify-center transition-all duration-200"
           style={{
             position: "absolute",
             left: "-15px",
@@ -46,12 +46,12 @@ export default function ThemeToggle() {
             transform: `scale(${isDark ? 1.2 : 1}) rotate(-45deg)`,
             backgroundImage: isDark
               ? `
+              radial-gradient(ellipse 165px 85px at bottom right, rgba(107, 49, 125, 0.00) 31.63%, rgba(139, 70, 166, 0.48) 55.89%, #5F13D3 68.14%),
               linear-gradient(45deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
-              radial-gradient(361.9% 159.23% at 70% 80%, rgba(107, 49, 125, 0.00) 20.63%, rgba(139, 70, 166, 0.48) 55.89%, #5F13D3 68.14%),
-               linear-gradient(180deg, rgba(248, 248, 248, 0.03) 0%, rgba(248, 248, 248, 0.01) 79.79%)
+              linear-gradient(180deg, rgba(248, 248, 248, 0.03) 0%, rgba(248, 248, 248, 0.01) 79.79%)
             `
               : `
-              radial-gradient(361.9% 159.23% at 70% 80%, rgba(107, 49, 125, 0.00) 20.63%, rgba(139, 70, 166, 0.48) 55.89%, #5F13D3 68.14%),
+              radial-gradient(ellipse 160px 50px at bottom right, rgba(107, 49, 125, 0.00) 31.63%, rgba(139, 70, 166, 0.15) 55.89%, rgba(95, 19, 211, 0.31) 68.14%),
               linear-gradient(45deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.80) 100%),
             linear-gradient(180deg, rgba(248, 248, 248, 0.90) 0%, rgba(248, 248, 248, 0.9) 79.79%)
             `,
@@ -60,7 +60,7 @@ export default function ThemeToggle() {
           }}
         >
           <div
-            className="flex items-center justify-center p-5 dark:[background:linear-gradient(142deg,var(--neutral-neutral-250,rgba(248,248,248,0.20))_0%,var(--neutral-neutral-220,rgba(248,248,248,0.08))_44.62%)] rounded-full w-6 h-6 z-0"
+            className="flex items-center justify-center p-5 dark:[background:linear-gradient(142deg,var(--neutral-neutral-250,rgba(248,248,248,0.20))_0%,var(--neutral-neutral-220,rgba(248,248,248,0.08))_44.62%)] rounded-full w-6 h-6 z-0 transition-all duration-200"
             style={{
               display: !isDark ? "none" : "flex",
             }}
@@ -79,7 +79,7 @@ export default function ThemeToggle() {
 
         {/* Icono de sol */}
         <div
-          className="flex items-center justify-center"
+          className="flex items-center justify-center transition-transform duration-200"
           style={{
             position: "absolute",
             right: "-15px",
@@ -91,21 +91,21 @@ export default function ThemeToggle() {
             // boxShadow: isDark ? "none" : "0 2px 6px rgba(0,0,0,0.2)",
             backgroundImage: isDark
               ? `
+              radial-gradient(ellipse 160px 50px at top left, rgba(118, 51, 46, 0.00) 32.39%, rgba(181, 134, 62, 0.48) 56.43%, #B60D00 68.15%),
               linear-gradient(-45deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
-              radial-gradient(428.2% 169.86% at 50% 0%, rgba(118, 51, 46, 0.00) 32.39%, rgba(181, 134, 62, 0.48) 56.43%, #B60D00 68.15%),
               linear-gradient(180deg, rgba(248, 248, 248, 0.03) 0%, rgba(248, 248, 248, 0.01) 79.79%)
             `
               : `
-              linear-gradient(45deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.80) 100%),
-                            radial-gradient(428.2% 169.86% at 50% 0%, rgba(118, 51, 46, 0.00) 32.39%, rgba(181, 134, 62, 0.9) 50%, #B60D00 68.15%),
-            linear-gradient(180deg, rgba(248, 248, 248, 0.9) 0%, rgba(248, 248, 248, 0.01) 79.79%)
+              radial-gradient(ellipse 255px 105px at top left, rgba(118, 51, 46, 0.00) 35.39%, rgba(181, 134, 62, 0.40) 55.43%, rgba(182, 13, 0, 0.31) 65.15%),
+              linear-gradient(45deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.90) 100%),
+            linear-gradient(180deg, rgba(248, 248, 248, 0.9) 0%, rgba(248, 248, 248, 0.09) 79.79%)
             `,
             backdropFilter: "blur(10px)",
             WebkitBackdropFilter: "blur(10px)",
           }}
         >
           <div
-            className="flex items-center justify-center p-5 [background:linear-gradient(142deg,rgba(248,248,248,1)_0%,rgba(248,248,248,1)_44.62%)] drop-shadow-[-0.5px_2px_1px_rgba(0,0,0,0.05)] rounded-full w-6 h-6 z-0"
+            className="flex items-center justify-center p-5 [background:linear-gradient(142deg,rgba(248,248,248,1)_0%,rgba(248,248,248,1)_44.62%)] drop-shadow-[-0.5px_2px_1px_rgba(0,0,0,0.05)] rounded-full w-6 h-6 z-0 transition-all duration-500"
             style={{
               display: isDark ? "none" : "flex",
             }}
