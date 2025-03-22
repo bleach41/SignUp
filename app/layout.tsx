@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+
 import { ThemeProvider } from "@/contexts/theme-context"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <ThemeProvider>
       <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className} mx-60 mt-8`}>
+        <body className={`${inter.className} xl:mx-60 mx-2 mt-8`}>
           {children}
           <Toaster />
         </body>
@@ -29,7 +30,3 @@ export default function RootLayout({
     </ThemeProvider>
   )
 }
-
-
-
-import './globals.css'

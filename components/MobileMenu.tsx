@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import {
     Sheet,
     SheetContent,
+    SheetHeader,
     SheetTrigger,
 } from "@/components/ui/sheet"
 import ThemeToggle from "./theme-toggle"
@@ -26,6 +27,7 @@ export default function MobileMenu({ isDark }: { isDark: boolean }) {
                 </Button>
             </SheetTrigger>
             <SheetContent
+                aria-labelledby="menu-title"
                 side="left"
                 isDark={isDark}
                 className={`flex flex-col w-80 p-0 rounded-[0_32px_32px_0] border-[0px] border-white/40 backdrop-blur-[0.2px] ${isDark
@@ -38,16 +40,16 @@ export default function MobileMenu({ isDark }: { isDark: boolean }) {
                     <LogoComponent isDark={isDark} />
                 </div>
 
-                <div className="p-4 flex gap-16 pl-6">
+                <div className="px-4 flex gap-10">
                     <AuthButtons isDark={isDark} />
                 </div>
 
-                <nav className="p-4">
+                <nav className="px-4">
                     <NavigationLinks isDark={isDark} />
                 </nav>
 
-                <div className="mt-8 p-4 ">
-                    <div className="flex items-center gap-20 pl-6 mb-4">
+                <div className="mt-1 p-4 ">
+                    <div className="flex px-4 items-center gap-16 mb-4">
                         <ThemeToggle />
                         <div className="flex flex-col gap-2">
 

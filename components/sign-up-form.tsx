@@ -148,7 +148,7 @@ export default function SignUpForm() {
               id="terms"
               checked={agreeToTerms}
               onCheckedChange={(checked) => setAgreeToTerms(checked as boolean)}
-              className="mt-1 border-orange-500 data-[state=checked]:bg-orange-500"
+              className="mt-0.5 border-orange-500 data-[state=checked]:bg-orange-500 "
             />
             <label
               htmlFor="terms"
