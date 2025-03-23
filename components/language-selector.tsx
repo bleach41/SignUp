@@ -83,31 +83,32 @@ export default function LanguageSelector() {
           : "bg-[rgba(255,255,255,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.10),2px_4px_16px_0px_rgba(0,0,0,0.06)]"
           }`}
       >
+
         <div className="py-2">
           {languages.map((language) => (
             <DropdownMenuItem
               key={language.code}
-              className={`flex items-center justify-start gap-3 px-4 py-2.5 cursor-pointer transition-all duration-200 ${selectedLanguage.code === language.code
+              className={`flex items-center justify-start gap-3 px-4 py-2.5 z-0 cursor-pointer transition-all duration-200 ${selectedLanguage.code === language.code
                 ? isDark
-                  ? "bg-[linear-gradient(118deg,rgba(255,165,126,0.22)_17.51%,rgba(255,255,255,0.00)_80%)]"
-                  : "bg-[linear-gradient(118deg,rgba(255,165,126,0.22)_17.51%,rgba(255,255,255,0.00)_80%)]"
+                  ? "bg-[radial-gradient(circle_200px_at_left,#B55530_2%,rgba(255,165,126,0.00)_2%,rgba(255,165,126,0.00)_82.79%),radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,255,255,0.00)_82.79%)]"
+                  : "bg-[radial-gradient(circle_200px_at_left,#FD7338_2%,rgba(255,165,126,0.00)_2%,rgba(255,165,126,0.00)_82.79%),radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)]"
                 : ""
                 } ${isDark
-                  ? "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white"
-                  : "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
-                } rounded-[16px] w-full`}
+                  ? "hover:bg-[radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white"
+                  : "hover:bg-[radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
+                } rounded-[0px] w-full`}
               onClick={() => {
                 setSelectedLanguage(language)
                 setIsOpen(false)
               }}
             >
-              <div className={`flex items-center px-0 justify-center h-8 w-8 rounded-full ${isDark
+              <div className={`flex items-center px-0 z-10 justify-center h-8 w-8 rounded-full ${isDark
                 ? "bg-[rgba(255,255,255,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)]"
                 : "bg-[rgba(0,0,0,0.05)] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.1)]"
                 }`}>
                 <Flag countryCode={language.flag} />
               </div>
-              <span className="text-sm font-medium">{language.name}</span>
+              <span className="text-sm z-10 font-medium">{language.name}</span>
             </DropdownMenuItem>
           ))}
         </div>

@@ -24,6 +24,7 @@ export default function ProductPageSelect() {
                 isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
             )}>
                 <Box className="w-4 h-4" /> Product page
+
                 <ChevronDown
                     size={16}
                     className={`transition-transform duration-200 text-[rgba(255,165,126,1)]
