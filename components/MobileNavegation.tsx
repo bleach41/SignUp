@@ -6,7 +6,7 @@ import MobileMenu from "./MobileMenu"
 
 export default function MobileNavigation({ isDark }: { isDark: boolean }) {
     return (
-        <div className="xl:hidden flex items-center justify-center w-full gap-4">
+        <div className="xl:hidden md:hidden flex items-center  justify-around w-full gap-4">
             <MobileMenu isDark={isDark} />
             <LogoComponent isDark={isDark} />
             <div className="opacity-0">

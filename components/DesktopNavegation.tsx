@@ -6,7 +6,7 @@ import AuthButtons from "./AuthButtons"
 import ProductPageSelect from "./ProductPageSelect"
 export default function DesktopNavigation({ isDark }: { isDark: boolean }) {
     return (
-        <div className="hidden xl:flex items-center justify-between w-full">
+        <div className="sm:hidden max-sm:hidden xl:flex md:flex items-center justify-between w-full">
             <div className="flex items-center gap-8">
                 <LogoComponent isDark={isDark} />
                 <ThemeToggle />

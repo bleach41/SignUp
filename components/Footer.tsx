@@ -10,9 +10,9 @@ export default function Footer() {
 
     return (
         <footer
-            className={"p-4 flex justify-center xl:justify-between items-center transition-colors duration-200"}
+            className={"p-4 flex justify-center xl:justify-between md:justify-between items-center transition-colors duration-200"}
         >
-            <div className="gap-8 text-sm hidden xl:flex">
+            <div className="gap-8 text-sm hidden xl:flex md:flex">
                 <a
                     href="#"
                     className={`transition-colors duration-200 ${isDark ? "text-gray-400 hover:text-white" : "text-gray-500 hover:text-gray-700"

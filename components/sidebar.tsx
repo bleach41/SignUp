@@ -9,7 +9,7 @@ export default function Sidebar() {
   const [darkMode, setDarkMode] = useState(true)
 
   return (
-    <div className="hidden md:block w-64 bg-[#1A1A1A] border-r border-gray-800 p-4">
+    <div className="hidden sm:block w-64 bg-[#1A1A1A] border-r border-gray-800 p-4">
       <div className="flex justify-between items-center mb-6">
         <div className="font-bold text-xl">DirectCodes</div>
         <button className="text-gray-400">

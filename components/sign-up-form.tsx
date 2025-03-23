@@ -76,7 +76,7 @@ export default function SignUpForm() {
   return (
     <div className="relative">
       <div
-        className="absolute top-0 left-0 z-0"
+        className="absolute top-0 left-0 z-0 "
         style={{
           backgroundImage: `url(${purpure.src})`,
           height: "20%",
@@ -89,7 +89,7 @@ export default function SignUpForm() {
         }}
       />
       <div
-        className={`relative z-10 w-full max-w-md [border-radius:32px] p-8 shadow-lg transition-colors duration-200 ${isDark
+        className={`relative z-10 max-sm:max-w-80 w-full max-w-md [border-radius:32px] p-8 shadow-lg transition-colors duration-200 ${isDark
           ? "bg-[linear-gradient(142deg,var(--neutral-neutral-250,rgba(248,248,248,0.10))_0%,var(--neutral-neutral-220,rgba(248,248,248,0.04))_44.62%)] shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset,0px_54px_32px_-16px_rgba(5,5,5,0.05),0px_24px_24px_-16px_rgba(5,5,5,0.09),0px_6px_12px_0px_rgba(5,5,5,0.10),0px_4px_4px_-4px_rgba(5,5,5,0.10),0px_0.5px_1.5px_-4px_rgba(5,5,5,0.50)] backdrop-blur-[50px] border-[1px_solid_var(--stroke-15-card,rgba(255,255,255,0.40))]"
           : "backdrop-blur-[50px] bg-[linear-gradient(142deg,rgba(248,248,248,0.80)_0%,rgba(248,248,248,0.50)_44.62%)]"
           }`}

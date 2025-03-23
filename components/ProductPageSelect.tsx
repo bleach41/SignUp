@@ -35,10 +35,11 @@ export default function ProductPageSelect() {
             {/* Content */}
             <DropdownMenuContent
                 className={`rounded-[20px] py-3 w-56 mt-2 px-0 transition-all duration-200 ${isDark
-                    ? "bg-[rgba(40,40,40,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset,2px_4px_16px_0px_rgba(248,248,248,0.06)_inset]"
+                    ? "bg-[rgba(40,40,40,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.04)_inset,2px_4px_16px_0px_rgba(248,248,248,0.06)_inset] "
                     : "bg-[rgba(255,255,255,0.95)] backdrop-blur-[50px] shadow-[0px_2px_2px_0px_rgba(255,255,255,0.10),2px_4px_16px_0px_rgba(0,0,0,0.06)]"
                     }`}
-            >
+            >{/*"hover:bg-[radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white"
+                : "hover:bg-[radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"}
                 {/* Piquito */}
                 <div
                     className={cn(
@@ -55,23 +56,23 @@ export default function ProductPageSelect() {
 
                 {/* Items */}
                 <DropdownMenuItem className={cn(
-                    "rounded-lg px-4 py-2 cursor-pointer",
-                    "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)]",
-                    isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
+                    "rounded-[0px] px-4 py-2 cursor-pointer",
+
+                    isDark ? "hover:bg-[radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white" : "hover:bg-[radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
                 )}>
                     Gift Cards
                 </DropdownMenuItem>
                 <DropdownMenuItem className={cn(
-                    "rounded-lg px-4 py-2 cursor-pointer",
-                    "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)]",
-                    isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
+                    "rounded-[0px]  px-4 py-2 cursor-pointer",
+
+                    isDark ? "hover:bg-[radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white" : "hover:bg-[radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
                 )}>
                     Device Service
                 </DropdownMenuItem>
                 <DropdownMenuItem className={cn(
-                    "rounded-lg px-4 py-2 cursor-pointer",
-                    "hover:bg-[linear-gradient(118deg,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)]",
-                    isDark ? "text-gray-300 hover:text-white" : "text-gray-700 hover:text-gray-900"
+                    "rounded-[0px]  px-4 py-2 cursor-pointer",
+
+                    isDark ? "hover:bg-[radial-gradient(circle_200px_at_left,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-white" : "hover:bg-[radial-gradient(circle_200px_at_left,rgba(253,115,56,0.20)_2%,rgba(255,165,126,0.12)_17.51%,rgba(255,165,126,0.00)_82.79%)] text-gray-900"
                 )}>
                     Boxes / Dongles / Credits
                 </DropdownMenuItem>

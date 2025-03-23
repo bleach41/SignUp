@@ -10,7 +10,7 @@ export default function Header() {
 
   return (
     <header
-      className={`py-4 flex items-center justify-between transition-colors duration-200 ${isDark ? "bg-[#1A1A1A]" : "bg-[#F5F5F5]"
+      className={`py-4 max-sm:pt-0 flex items-center justify-between transition-colors duration-200 ${isDark ? "bg-[#1A1A1A]" : "bg-[#F5F5F5]"
         }`}
     >
       {/* Desktop Navigation */}

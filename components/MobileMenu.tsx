@@ -21,16 +21,17 @@ export default function MobileMenu({ isDark }: { isDark: boolean }) {
                 <Button
                     variant="ghost"
                     size="icon"
-                    className={`${isDark ? "text-white" : "text-gray-900"}`}
+                    className={`rounded-[48px] p-2 ${isDark ? "text-white [background:radial-gradient(circle_45px_at_bottom,rgba(40,40,40,0.00)_60%,rgba(248,248,248,0.20)_86%)] shadow-[inset_0px_2px_2px_0px_rgba(248,248,248,0.08),inset_2px_4px_16px_0px_rgba(248,248,248,0.06)] backdrop-blur-[50px]" : "text-gray-900 border border-white/40 [background:linear-gradient(142deg,#F8F8F8_0%,rgba(248,248,248,0.40)_44.62%)] [box-shadow:0px_24px_24px_-16px_rgba(5,5,5,0.09),0px_6px_12px_0px_rgba(5,5,5,0.10),0px_4px_4px_-4px_rgba(5,5,5,0.10),0px_0.5px_1.5px_-4px_rgba(5,5,5,0.50)]"}`}
                 >
-                    <Menu className="h-6 w-6" />
+                    <Menu className={`h-6 w-6  
+                        }`} />
                 </Button>
             </SheetTrigger>
             <SheetContent
                 aria-labelledby="menu-title"
                 side="left"
                 isDark={isDark}
-                className={`flex flex-col w-80 p-0 rounded-[0_32px_32px_0] border-[0px] border-white/40 backdrop-blur-[0.2px] ${isDark
+                className={`flex flex-col overflow-auto w-80 p-0 rounded-[0_32px_32px_0] border-[0px] border-white/40 backdrop-blur-[0.2px] ${isDark
                     ? "bg-[linear-gradient(180deg,rgba(40,40,40,0.60)0%,rgba(40,40,40,0.00)100%)] shadow-[2px_4px_16px_0px_rgba(248,248,248,1)_inset,0px_24px_24px_-16px_rgba(5,5,5,0.09),0px_6px_13px_0px_rgba(5,5,5,0.10),0px_6px_4px_-4px_rgba(5,5,5,0.10),0px_5px_1.5px_-4px_rgba(5,5,5,0.25)]"
                     : "bg-[linear-gradient(180deg,rgba(255,255,255,0.20)_0%,rgba(255,255,255,0.00)_100%)]"
                     } shadow-[2px_4px_16px_0px_rgba(248,248,248,0.06)_inset,0px_24px_24px_-16px_rgba(5,5,5,0.09),0px_6px_13px_0px_rgba(5,5,5,0.10),0px_6px_4px_-4px_rgba(5,5,5,0.10),0px_5px_1.5px_-4px_rgba(5,5,5,0.25)] ${isDark ? "text-white" : "text-gray-900"
