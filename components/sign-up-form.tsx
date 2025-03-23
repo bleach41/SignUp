@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import Link from 'next/link';
 import { useState } from "react"
 import { Mail, Lock, Eye, EyeOff } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -235,9 +235,9 @@ export default function SignUpForm() {
             className={`text-center text-sm transition-colors duration-200 ${isDark ? "text-gray-400" : "text-gray-500"}`}
           >
             Already have an account?{" "}
-            <a href="#" className={`${isDark ? "text-gray-300" : "text-gray-900"}`}>
+            <Link href="/login" className={`${isDark ? "text-gray-300" : "text-gray-900"}`}>
               Log In
-            </a>
+            </Link>
           </p>
         </form>
       </div>
