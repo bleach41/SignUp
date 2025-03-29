@@ -10,6 +10,8 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { useToast } from "@/components/ui/use-toast"
 import { useTheme } from "@/contexts/theme-context"
 import purpure from "@/public/purpure.svg"
+import { useRouter } from "next/navigation"
+
 export default function LogInForm() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -17,6 +19,7 @@ export default function LogInForm() {
     const [agreeToTerms, setAgreeToTerms] = useState(false)
     const { toast } = useToast()
     const { theme } = useTheme()
+    const router = useRouter()
     const isDark = theme === "dark"
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -42,11 +45,11 @@ export default function LogInForm() {
             return
         }
 
-        // Simulate successful registration
+        // Simulate successful login
         toast({
             variant: "success",
             title: "Success!",
-            description: "Registration is complete.",
+            description: "Login successful.",
             className: "bg-green-100 text-green-800 border-none",
         })
 
@@ -54,6 +57,9 @@ export default function LogInForm() {
         setEmail("")
         setPassword("")
         setAgreeToTerms(false)
+
+        // Redirect to home page
+        router.push("/home")
     }
 
     const handleGoogleLogin = () => {
