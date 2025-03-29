@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Colores base */
+    --background: 222.2 84% 4.9%;
+    --background-secondary: 217 33% 17%;
+    --foreground: 210 40% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 222 47% 11%;
+    --navbar-foreground: 210 40% 98%;
+    --navbar-border: 217 33% 17%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-hover-background: 217 33% 17%;
+    --sidebar-active-background: 217 33% 17%;
+    --sidebar-hover: 217 33% 17%;
+    --sidebar-active: 217 33% 17%;
+
+    /* Colores de acento */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Otros */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --radius: 0.5rem;
+  }
+
+  /* Estilos específicos para temas dinámicos */
+  .dynamic-theme {
+    /* Los valores se establecerán dinámicamente mediante JavaScript */
+  }
+
+  .lucky-wolf {
+    /* Colores base */
+    --background: 222.2 84% 4.9%;
+    --background-secondary: 217 33% 17%;
+    --foreground: 210 40% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 222 47% 11%;
+    --navbar-foreground: 210 40% 98%;
+    --navbar-border: 217 33% 17%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-hover-background: 217 33% 17%;
+    --sidebar-active-background: 217 33% 17%;
+    --sidebar-hover: 217 33% 17%;
+    --sidebar-active: 217 33% 17%;
+
+    /* Colores de acento */
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Otros */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+
+  .red-casino {
+    /* Colores base */
+    --background: 0 0% 10%;
+    --background-secondary: 0 0% 15%;
+    --foreground: 0 0% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 0 70% 15%;
+    --navbar-foreground: 0 0% 98%;
+    --navbar-border: 0 50% 20%;
+
+    --sidebar-background: 0 70% 15%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 0 50% 20%;
+    --sidebar-hover-background: 0 60% 20%;
+    --sidebar-active-background: 0 60% 20%;
+    --sidebar-hover: 0 60% 20%;
+    --sidebar-active: 0 60% 20%;
+
+    /* Colores de acento */
+    --primary: 0 90% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 10% 20%;
+    --muted-foreground: 0 10% 70%;
+    --accent: 0 20% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Otros */
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+    --border: 0 10% 20%;
+    --input: 0 10% 20%;
+    --ring: 0 90% 50%;
+  }
+
+  .green-fortune {
+    /* Colores base */
+    --background: 160 30% 10%;
+    --background-secondary: 160 25% 15%;
+    --foreground: 0 0% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 160 50% 12%;
+    --navbar-foreground: 0 0% 98%;
+    --navbar-border: 160 40% 20%;
+
+    --sidebar-background: 160 50% 12%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 160 40% 20%;
+    --sidebar-hover-background: 160 40% 18%;
+    --sidebar-active-background: 160 40% 18%;
+    --sidebar-hover: 160 40% 18%;
+    --sidebar-active: 160 40% 18%;
+
+    /* Colores de acento */
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 160 25% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 160 15% 20%;
+    --muted-foreground: 160 10% 70%;
+    --accent: 160 25% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Otros */
+    --card: 160 30% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 160 30% 10%;
+    --popover-foreground: 0 0% 98%;
+    --border: 160 15% 25%;
+    --input: 160 15% 25%;
+    --ring: 142 70% 45%;
+  }
+
+  .purple-royale {
+    /* Colores base */
+    --background: 270 30% 8%;
+    --background-secondary: 270 25% 12%;
+    --foreground: 0 0% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 270 50% 15%;
+    --navbar-foreground: 0 0% 98%;
+    --navbar-border: 270 40% 20%;
+
+    --sidebar-background: 270 50% 15%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 270 40% 20%;
+    --sidebar-hover-background: 270 40% 20%;
+    --sidebar-active-background: 270 40% 20%;
+    --sidebar-hover: 270 40% 20%;
+    --sidebar-active: 270 40% 20%;
+
+    /* Colores de acento */
+    --primary: 270 70% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 270 25% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 270 15% 20%;
+    --muted-foreground: 270 10% 70%;
+    --accent: 270 25% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Otros */
+    --card: 270 30% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 270 30% 8%;
+    --popover-foreground: 0 0% 98%;
+    --border: 270 15% 25%;
+    --input: 270 15% 25%;
+    --ring: 270 70% 60%;
+  }
+
+  .gold-rush {
+    /* Colores base */
+    --background: 40 30% 10%;
+    --background-secondary: 40 25% 15%;
+    --foreground: 0 0% 98%;
+
+    /* Componentes específicos */
+    --navbar-background: 40 50% 15%;
+    --navbar-foreground: 0 0% 98%;
+    --navbar-border: 40 40% 20%;
+
+    --sidebar-background: 40 50% 15%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-border: 40 40% 20%;
+    --sidebar-hover-background: 40 40% 20%;
+    --sidebar-active-background: 40 40% 20%;
+    --sidebar-hover: 40 40% 20%;
+    --sidebar-active: 40 40% 20%;
+
+    /* Colores de acento */
+    --primary: 45 90% 50%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 40 25% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 40 15% 20%;
+    --muted-foreground: 40 10% 70%;
+    --accent: 40 25% 20%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Colores de estado */
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Otros */
+    --card: 40 30% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 40 30% 10%;
+    --popover-foreground: 0 0% 98%;
+    --border: 40 15% 25%;
+    --input: 40 15% 25%;
+    --ring: 45 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos directos para componentes específicos */
+.bg-navbar-background {
+  background-color: hsl(var(--navbar-background)) !important;
+}
+
+.bg-sidebar-background {
+  background-color: hsl(var(--sidebar-background)) !important;
+}
+
+.text-sidebar-foreground {
+  color: hsl(var(--sidebar-foreground)) !important;
+}
+
+.border-sidebar-border {
+  border-color: hsl(var(--sidebar-border)) !important;
+}
+
+.hover\:bg-sidebar-hover:hover {
+  background-color: hsl(var(--sidebar-hover-background)) !important;
+}
+
+.bg-sidebar-active {
+  background-color: hsl(var(--sidebar-active-background)) !important;
+}
+
+.bg-background-secondary {
+  background-color: hsl(var(--background-secondary)) !important;
+}
+

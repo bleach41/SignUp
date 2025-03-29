@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import {
@@ -55,7 +54,7 @@ export function Sidebar({ isExpanded }: SidebarProps) {
     },
     {
       icon: (
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-primary-foreground">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-sidebar-foreground">
           🏆
         </div>
       ),
@@ -63,7 +62,7 @@ export function Sidebar({ isExpanded }: SidebarProps) {
     },
     {
       icon: (
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-primary-foreground">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-sidebar-foreground">
           🇬🇧
         </div>
       ),
@@ -71,7 +70,7 @@ export function Sidebar({ isExpanded }: SidebarProps) {
     },
     {
       icon: (
-        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-primary-foreground">
+        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-background-secondary text-sidebar-foreground">
           <Headphones className="h-4 w-4" />
         </div>
       ),
@@ -92,9 +91,8 @@ export function Sidebar({ isExpanded }: SidebarProps) {
   return (
     <aside
       className={cn(
-        "h-full overflow-auto flex-shrink-0 flex-col border-r border-border bg-background transition-all duration-300",
+        "flex h-full flex-col border-r border-sidebar-border bg-sidebar-background transition-all duration-300",
         isExpanded ? "w-64" : "w-16",
-        "flex",
       )}
     >
       <div className="flex flex-col gap-1 p-2">
@@ -106,8 +104,8 @@ export function Sidebar({ isExpanded }: SidebarProps) {
                   <Button
                     variant="ghost"
                     className={cn(
-                      "flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-primary-foreground hover:bg-background-secondary",
-                      item.active && "bg-background-secondary",
+                      "flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover",
+                      item.active && "bg-sidebar-active",
                     )}
                     onClick={() => toggleCategory("casino")}
                   >
@@ -129,7 +127,7 @@ export function Sidebar({ isExpanded }: SidebarProps) {
                     <Button
                       key={subIndex}
                       variant="ghost"
-                      className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-primary-foreground hover:bg-background-secondary"
+                      className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
                     >
                       {subItem.icon}
                       <span className="flex-1 text-left text-sm">{subItem.label}</span>
@@ -140,7 +138,7 @@ export function Sidebar({ isExpanded }: SidebarProps) {
             ) : (
               <Button
                 variant="ghost"
-                className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-primary-foreground hover:bg-background-secondary"
+                className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
               >
                 {item.icon}
                 {isExpanded && <span className="flex-1 text-left">{item.label}</span>}
