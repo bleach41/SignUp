@@ -8,6 +8,8 @@ import { Input } from "@/components/ui/input"
 import { useTheme } from "@/contexts/theme-provider"
 import { ClientSwitcher } from "@/contexts/client-switcher"
 import Crown from "@/public/Icons/Crown"
+import { useState } from "react"
+
 interface NavbarProps {
   isExpanded?: boolean
   toggleSidebar: () => void
@@ -17,27 +19,42 @@ interface NavbarProps {
 
 export function Navbar({ isExpanded, toggleSidebar, isRightExpanded, toggleRightSidebar }: NavbarProps) {
   const { isDynamicTheme, dynamicTheme } = useTheme()
+  const [activeTab, setActiveTab] = useState<'sport' | 'casino'>('sport')
 
   return (
-    <header className="flex px-6 h-16 w-full items-center justify-between" style={{ background: 'var(--navbar-background)', boxShadow: 'var(--navbar-shadow)' }}>
+    <header className="flex px-6 h-16 w-full justify-between" style={{ background: 'var(--navbar-background)', boxShadow: 'var(--navbar-shadow)' }}>
       <div className="flex items-center gap-4">
-
         <div className="flex items-center gap-2">
           <span className="flex items-center gap-1 font-bold text-navbar-foreground">
             <span className="text-primary">🔥</span>
             {isDynamicTheme && dynamicTheme ? dynamicTheme.name.toUpperCase() : "LUCKY WOLF"}
           </span>
-          <Button variant="ghost" size="icon" className="rounded-xl shadow-[0px_2px_0px_#3F4655_inset]" style={{ background: 'var(--navbar-background-secondary)' }} onClick={toggleSidebar}>
+          <Button variant="ghost" size="icon" className="ml-3 rounded-xl shadow-[0px_2px_0px_#3F4655_inset]" style={{ background: 'var(--navbar-background-secondary)' }} onClick={toggleSidebar}>
             <Menu rotate={isExpanded ? '180deg' : '0deg'} />
           </Button>
         </div>
-        <div className="hidden items-center gap-4 md:flex">
-          <Button variant="ghost" className="rounded-full bg-primary/10 px-4 text-navbar-foreground">
-            <span className="mr-1 text-primary"><Crown /></span> Sport
-          </Button>
-          <Button variant="ghost" className="rounded-full bg-background-secondary px-4 text-navbar-foreground">
-            <span className="mr-1">🎮</span> Casino
-          </Button>
+
+        <div className="hidden items-center gap-1 md:flex relative h-full">
+          <div className="flex relative h-full">
+            <button
+              onClick={() => setActiveTab('sport')}
+              className={`px-6 py-2 relative flex items-center gap-2 transition-colors`}
+            >
+              <Crown /> Sport
+              {activeTab === 'sport' && (
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+              )}
+            </button>
+            <button
+              onClick={() => setActiveTab('casino')}
+              className={`px-6 py-2 relative flex items-center gap-2 transition-colors}`}
+            >
+              <span className="text-lg">🎮</span> Casino
+              {activeTab === 'casino' && (
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
       <div className="flex items-center gap-4">
