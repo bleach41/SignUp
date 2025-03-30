@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-
 const config = {
   darkMode: ["class"],
   content: [
@@ -24,7 +23,9 @@ const config = {
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
+        "background-secondary": "hsl(var(--background-secondary))",
         foreground: "hsl(var(--foreground))",
+
         // Componentes específicos
         navbar: {
           background: "hsl(var(--navbar-background))",
@@ -38,6 +39,7 @@ const config = {
           hover: "hsl(var(--sidebar-hover-background))",
           active: "hsl(var(--sidebar-active-background))",
         },
+
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -65,6 +67,45 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+
+        // Variables para temas de autenticación (login/signup)
+        auth: {
+          border: "hsl(var(--auth-border))",
+          input: "hsl(var(--auth-input))",
+          ring: "hsl(var(--auth-ring))",
+          background: "hsl(var(--auth-background))",
+          foreground: "hsl(var(--auth-foreground))",
+          primary: {
+            DEFAULT: "hsl(var(--auth-primary))",
+            foreground: "hsl(var(--auth-primary-foreground))",
+          },
+          secondary: {
+            DEFAULT: "hsl(var(--auth-secondary))",
+            foreground: "hsl(var(--auth-secondary-foreground))",
+          },
+          destructive: {
+            DEFAULT: "hsl(var(--auth-destructive))",
+            foreground: "hsl(var(--auth-destructive-foreground))",
+          },
+          muted: {
+            DEFAULT: "hsl(var(--auth-muted))",
+            foreground: "hsl(var(--auth-muted-foreground))",
+          },
+          accent: {
+            DEFAULT: "hsl(var(--auth-accent))",
+            foreground: "hsl(var(--auth-accent-foreground))",
+          },
+          popover: {
+            DEFAULT: "hsl(var(--auth-popover))",
+            foreground: "hsl(var(--auth-popover-foreground))",
+          },
+          card: {
+            DEFAULT: "hsl(var(--auth-card))",
+            foreground: "hsl(var(--auth-card-foreground))",
+          },
         },
       },
       borderRadius: {

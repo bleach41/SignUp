@@ -2,7 +2,6 @@
 
 import type React from "react"
 import { createContext, useContext, useState, useEffect } from "react"
-import { themes } from "@/lib/theme-config"
 import { type DynamicTheme, themeService, applyDynamicTheme } from "@/lib/theme-service"
 
 interface ThemeContextProps {
@@ -54,7 +53,7 @@ export function ThemeProvider({
   const [isDynamicTheme, setIsDynamicTheme] = useState(false)
 
   // Lista de temas disponibles (predefinidos + dinámicos)
-  const availableThemes = [...Object.keys(themes), ...(dynamicTheme ? [dynamicTheme.id] : [])]
+  const availableThemes = [...(dynamicTheme ? [dynamicTheme.id] : [])]
 
   // Función para cargar un tema dinámico desde el "backend"
   const loadDynamicTheme = async (clientId: string) => {

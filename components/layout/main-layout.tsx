@@ -1,13 +1,11 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Sidebar } from "@/components/layout/sidebar"
 import { Navbar } from "@/components/layout/navbar"
 import { RightSidebar } from "@/components/layout/right-sidebar"
-import { ThemeProvider } from "@/components/theme-provider"
-
+import { ThemeProvider } from "@/contexts/theme-provider"
 interface MainLayoutProps {
   children: React.ReactNode
 }

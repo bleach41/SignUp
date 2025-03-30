@@ -13,7 +13,28 @@ body {
 }
 
 @layer base {
+  /* Variables para temas claros/oscuros (login/signup) */
   :root {
+    --auth-background: 0 0% 100%;
+    --auth-foreground: 0 0% 3.9%;
+    --auth-card: 0 0% 100%;
+    --auth-card-foreground: 0 0% 3.9%;
+    --auth-popover: 0 0% 100%;
+    --auth-popover-foreground: 0 0% 3.9%;
+    --auth-primary: 0 0% 9%;
+    --auth-primary-foreground: 0 0% 98%;
+    --auth-secondary: 0 0% 96.1%;
+    --auth-secondary-foreground: 0 0% 9%;
+    --auth-muted: 0 0% 96.1%;
+    --auth-muted-foreground: 0 0% 45.1%;
+    --auth-accent: 0 0% 96.1%;
+    --auth-accent-foreground: 0 0% 9%;
+    --auth-destructive: 0 84.2% 60.2%;
+    --auth-destructive-foreground: 0 0% 98%;
+    --auth-border: 0 0% 89.8%;
+    --auth-input: 0 0% 89.8%;
+    --auth-ring: 0 0% 3.9%;
+    --auth-radius: 0.5rem;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -48,7 +69,27 @@ body {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
+    --auth-background: 0 0% 3.9%;
+    --auth-foreground: 0 0% 98%;
+    --auth-card: 0 0% 3.9%;
+    --auth-card-foreground: 0 0% 98%;
+    --auth-popover: 0 0% 3.9%;
+    --auth-popover-foreground: 0 0% 98%;
+    --auth-primary: 0 0% 98%;
+    --auth-primary-foreground: 0 0% 9%;
+    --auth-secondary: 0 0% 14.9%;
+    --auth-secondary-foreground: 0 0% 98%;
+    --auth-muted: 0 0% 14.9%;
+    --auth-muted-foreground: 0 0% 63.9%;
+    --auth-accent: 0 0% 14.9%;
+    --auth-accent-foreground: 0 0% 98%;
+    --auth-destructive: 0 62.8% 30.6%;
+    --auth-destructive-foreground: 0 0% 98%;
+    --auth-border: 0 0% 14.9%;
+    --auth-input: 0 0% 14.9%;
+    --auth-ring: 0 0% 83.1%;
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
     --card: 0 0% 3.9%;

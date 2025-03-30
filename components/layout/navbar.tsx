@@ -5,16 +5,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useTheme } from "@/contexts/theme-provider"
 import { ClientSwitcher } from "@/contexts/client-switcher"
-
 interface NavbarProps {
-  isExpanded: boolean
+  isExpanded?: boolean
   toggleSidebar: () => void
   isRightExpanded: boolean
   toggleRightSidebar: () => void
 }
 
-export function Navbar({ isExpanded, toggleSidebar, isRightExpanded, toggleRightSidebar }: NavbarProps) {
-  const { theme, isDynamicTheme, dynamicTheme } = useTheme()
+export function Navbar({ toggleSidebar, isRightExpanded, toggleRightSidebar }: NavbarProps) {
+  const { isDynamicTheme, dynamicTheme } = useTheme()
 
   return (
     <header className="flex h-16 w-full items-center justify-between border-b border-navbar-border bg-navbar-background px-4">
