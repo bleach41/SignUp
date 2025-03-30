@@ -8,13 +8,14 @@ export type DynamicThemeColors = {
   // Componentes específicos
   navbar: {
     background: string;
+    backgroundSecondary: string;
     foreground: string;
-    border: string;
+    shadow: string;
   };
   sidebar: {
     background: string;
     foreground: string;
-    border: string;
+    shadow: string;
     hoverBackground: string;
     activeBackground: string;
   };
@@ -27,6 +28,7 @@ export type DynamicThemeColors = {
   muted: string;
   mutedForeground: string;
   border: string;
+  borderSecondary: string;
 
   // Colores de estado
   success: string;
@@ -61,20 +63,22 @@ export const mockThemes: Record<string, DynamicTheme> = {
     name: "Ocean Blue",
     colors: {
       // Colores base
-      background: "210 50% 10%",
-      backgroundSecondary: "210 40% 15%",
+      background: "210 50% 25%",
+      backgroundSecondary: "240 14.29% 11.37%",
       foreground: "0 0% 98%",
 
       // Componentes específicos
       navbar: {
-        background: "210 60% 20%",
+        background: "linear-gradient(152deg, #21242D 17.38%, #1C1F28 82.62%)",
+        backgroundSecondary:
+          "linear-gradient(180deg, #343A47 0%, #2C3140 100%)",
         foreground: "0 0% 98%",
-        border: "210 50% 25%",
+        shadow: "0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset",
       },
       sidebar: {
-        background: "210 60% 20%",
+        background: "linear-gradient(180deg, #171A23 0%, #181B24 100%)",
         foreground: "0 0% 98%",
-        border: "210 50% 25%",
+        shadow: "0px 0px 12px rgba(16, 19, 26, 0.32)",
         hoverBackground: "210 50% 25%",
         activeBackground: "210 50% 25%",
       },
@@ -86,8 +90,8 @@ export const mockThemes: Record<string, DynamicTheme> = {
       secondaryForeground: "0 0% 98%",
       muted: "210 30% 25%",
       mutedForeground: "210 20% 70%",
-      border: "210 30% 25%",
-
+      border: "210 15.38% 20.76%",
+      borderSecondary: "210 12.77% 34.31%",
       // Colores de estado
       success: "142 76% 36%",
       warning: "38 92% 50%",
@@ -119,14 +123,17 @@ export const mockThemes: Record<string, DynamicTheme> = {
 
       // Componentes específicos
       navbar: {
-        background: "20 60% 20%",
+        background:
+          "linear-gradient(152deg, hsl(20 60% 20%) 17.38%, hsl(20 60% 15%) 82.62%)",
+        backgroundSecondary: "20 40% 15%",
         foreground: "0 0% 98%",
-        border: "20 50% 25%",
+        shadow: "3px 3px 10px 10px hsl(0, 100%, 10.37%)",
       },
       sidebar: {
-        background: "20 60% 20%",
+        background:
+          "linear-gradient(180deg, hsl(20 60% 25%) 0%, hsl(20 60% 15%) 100%)",
         foreground: "0 0% 98%",
-        border: "20 50% 25%",
+        shadow: "0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset",
         hoverBackground: "20 50% 25%",
         activeBackground: "20 50% 25%",
       },
@@ -138,7 +145,8 @@ export const mockThemes: Record<string, DynamicTheme> = {
       secondaryForeground: "0 0% 98%",
       muted: "20 30% 25%",
       mutedForeground: "20 20% 70%",
-      border: "20 30% 25%",
+      border: "120 85.71% 47.06%",
+      borderSecondary: "#3F4655",
 
       // Colores de estado
       success: "142 76% 36%",
@@ -212,8 +220,12 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
 
   // Aplicar colores de componentes específicos
   root.style.setProperty("--navbar-background", theme.colors.navbar.background);
+  root.style.setProperty(
+    "--navbar-background-secondary",
+    theme.colors.navbar.backgroundSecondary
+  );
   root.style.setProperty("--navbar-foreground", theme.colors.navbar.foreground);
-  root.style.setProperty("--navbar-border", theme.colors.navbar.border);
+  root.style.setProperty("--navbar-shadow", theme.colors.navbar.shadow);
 
   root.style.setProperty(
     "--sidebar-background",
@@ -223,7 +235,7 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
     "--sidebar-foreground",
     theme.colors.sidebar.foreground
   );
-  root.style.setProperty("--sidebar-border", theme.colors.sidebar.border);
+  root.style.setProperty("--sidebar-shadow", theme.colors.sidebar.shadow);
   root.style.setProperty(
     "--sidebar-hover-background",
     theme.colors.sidebar.hoverBackground
@@ -247,6 +259,7 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
   root.style.setProperty("--muted", theme.colors.muted);
   root.style.setProperty("--muted-foreground", theme.colors.mutedForeground);
   root.style.setProperty("--border", theme.colors.border);
+  root.style.setProperty("--border-secondary", theme.colors.borderSecondary);
 
   // Aplicar colores de estado
   root.style.setProperty("--success", theme.colors.success);

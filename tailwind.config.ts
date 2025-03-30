@@ -20,6 +20,7 @@ const config = {
     extend: {
       colors: {
         border: "hsl(var(--border))",
+        "border-secondary": "hsl(var(--border-secondary))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -29,13 +30,14 @@ const config = {
         // Componentes específicos
         navbar: {
           background: "hsl(var(--navbar-background))",
+          "background-secondary": "hsl(var(--navbar-background-secondary))",
           foreground: "hsl(var(--navbar-foreground))",
-          border: "hsl(var(--navbar-border))",
+          shadow: "hsl(var(--navbar-shadow))",
         },
         sidebar: {
           background: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
-          border: "hsl(var(--sidebar-border))",
+          shadow: "hsl(var(--sidebar-shadow))",
           hover: "hsl(var(--sidebar-hover-background))",
           active: "hsl(var(--sidebar-active-background))",
         },

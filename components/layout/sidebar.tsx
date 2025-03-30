@@ -91,61 +91,65 @@ export function Sidebar({ isExpanded }: SidebarProps) {
   return (
     <aside
       className={cn(
-        "flex h-full flex-col border-r border-sidebar-border bg-sidebar-background transition-all duration-300",
-        isExpanded ? "w-64" : "w-16",
+        "flex h-full flex-col items-center overflow-auto transition-all duration-300",
+        isExpanded ? "w-64" : "w-20",
       )}
+      style={{ background: 'var(--sidebar-background)', boxShadow: 'var(--sidebar-shadow)' }}
     >
-      <div className="flex flex-col gap-1 p-2">
+      <div className="flex flex-col gap-1 p-2 ">
         {menuItems.map((item, index) => (
-          <div key={index} className="relative">
-            {item.submenu ? (
-              <Collapsible open={isExpanded && activeCategory === "casino"} disabled={!isExpanded}>
-                <CollapsibleTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className={cn(
-                      "flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover",
-                      item.active && "bg-sidebar-active",
-                    )}
-                    onClick={() => toggleCategory("casino")}
-                  >
-                    {item.icon}
-                    {isExpanded && (
-                      <>
-                        <span className="flex-1 text-left">{item.label}</span>
-                        {activeCategory === "casino" ? (
-                          <ChevronDown className="h-4 w-4" />
-                        ) : (
-                          <ChevronRight className="h-4 w-4" />
-                        )}
-                      </>
-                    )}
-                  </Button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="ml-4 mt-1">
-                  {item.submenu.map((subItem, subIndex) => (
+          <>
+            <div key={index} className="relative ">
+              {item.submenu ? (
+                <Collapsible open={isExpanded && activeCategory === "casino"} disabled={!isExpanded}>
+                  <CollapsibleTrigger asChild>
                     <Button
-                      key={subIndex}
                       variant="ghost"
-                      className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
+                      className={cn(
+                        "flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover",
+                        item.active && "bg-sidebar-active",
+                      )}
+                      onClick={() => toggleCategory("casino")}
                     >
-                      {subItem.icon}
-                      <span className="flex-1 text-left text-sm">{subItem.label}</span>
+                      {item.icon}
+                      {isExpanded && (
+                        <>
+                          <span className="flex-1 text-left">{item.label}</span>
+                          {activeCategory === "casino" ? (
+                            <ChevronDown className="h-4 w-4" />
+                          ) : (
+                            <ChevronRight className="h-4 w-4" />
+                          )}
+                        </>
+                      )}
                     </Button>
-                  ))}
-                </CollapsibleContent>
-              </Collapsible>
-            ) : (
-              <Button
-                variant="ghost"
-                className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
-              >
-                {item.icon}
-                {isExpanded && <span className="flex-1 text-left">{item.label}</span>}
-              </Button>
-            )}
-          </div>
-        ))}
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="ml-4 mt-1">
+                    {item.submenu.map((subItem, subIndex) => (
+                      <Button
+                        key={subIndex}
+                        variant="ghost"
+                        className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
+                      >
+                        {subItem.icon}
+                        <span className="flex-1 text-left text-sm">{subItem.label}</span>
+                      </Button>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+              ) : (
+                <Button
+                  variant="ghost"
+                  className="flex w-full justify-start gap-3 rounded-lg px-3 py-2 text-sidebar-foreground hover:bg-sidebar-hover"
+                >
+                  {item.icon}
+                  {isExpanded && <span className="flex-1 text-left">{item.label}</span>}
+                </Button>
+              )}
+            </div>
+            <div className="w-[50%] m-auto border-b-[1px] border-border">
+            </div>
+          </>))}
       </div>
 
       {isExpanded && (
