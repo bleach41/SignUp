@@ -1,7 +1,22 @@
-export function Search(props: React.SVGProps<SVGSVGElement>) {
+import * as React from "react"
+
+function Search(props: React.SVGProps<SVGSVGElement>) {
     return (
-        <svg width="1em" height="1em" viewBox="0 0 1024 1024" {...props}><path fill="currentColor" d="m795.904 750.72l124.992 124.928a32 32 0 0 1-45.248 45.248L750.656 795.904a416 416 0 1 1 45.248-45.248zM480 832a352 352 0 1 0 0-704a352 352 0 0 0 0 704" /></svg>
+        <svg
+            width={18}
+            height={18}
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path
+                d="M15.9 8.583a7.317 7.317 0 11-14.633 0 7.317 7.317 0 0114.634 0zM17.332 17.333l-1.666-1.667"
+                stroke="#919399"
+                strokeWidth={1.2}
+            />
+        </svg>
     )
 }
 
-export default Search;
+export default Search
