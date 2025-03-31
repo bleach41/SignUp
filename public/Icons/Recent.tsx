@@ -9,6 +9,10 @@ export function RecentIcon(props: React.SVGProps<SVGSVGElement>) {
             viewBox="0 0 18 20"
             fill="none"
             {...props}
+            style={{
+                width: '18px',
+                height: '20px'
+            }}
         >
             {/* Marcador (fondo) */}
             <path

@@ -36,7 +36,16 @@ export function SidebarSocial({ isExpanded, socialIcons }: SidebarSocialProps) {
                                 <ThreeCircle />
                             </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent side="right" align="start" className="min-w-[120px] p-1 bg-gray-900 border-gray-800">
+                        <DropdownMenuContent
+                            side="right"
+                            align="start"
+                            className="min-w-[120px] p-1 rounded-2xl"
+                            style={{
+                                background: 'var(--navbar-background)',
+                                border: '1px solid var(--border)',
+                                boxShadow: '0px 1px 1px 0px #3F4655 inset'
+                            }}
+                        >
                             {socialIcons.map((social, index) => (
                                 <DropdownMenuItem
                                     key={index}

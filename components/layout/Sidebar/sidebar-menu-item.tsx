@@ -170,7 +170,16 @@ export function SidebarMenuItem({ item, isExpanded, isActive, onToggle, isLangua
                         )}
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent side="right" align="start" className="min-w-[180px] p-1 bg-gray-900 border-gray-800">
+                <DropdownMenuContent
+                    side="right"
+                    align="start"
+                    className="min-w-[180px] p-1 rounded-2xl"
+                    style={{
+                        background: 'var(--navbar-background)',
+                        border: '1px solid var(--border)',
+                        boxShadow: '0px 1px 1px 0px #3F4655 inset'
+                    }}
+                >
                     <DropdownMenuLabel className="px-2 py-1.5 text-sm text-gray-400">{item.label}</DropdownMenuLabel>
                     <DropdownMenuSeparator className="bg-gray-800" />
                     {item.submenu.map((subItem, subIndex) => (

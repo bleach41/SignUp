@@ -27,12 +27,14 @@ const config = {
         "background-secondary": "hsl(var(--background-secondary))",
         foreground: "hsl(var(--foreground))",
         buttonBackground: "hsl(var(--button-background))",
+        searchBackground: "hsl(var(--search-background))",
         // Componentes específicos
         navbar: {
           background: "hsl(var(--navbar-background))",
           "background-secondary": "hsl(var(--navbar-background-secondary))",
           foreground: "hsl(var(--navbar-foreground))",
           shadow: "hsl(var(--navbar-shadow))",
+          text: "hsl(var(--navbar-text))",
         },
         sidebar: {
           background: "hsl(var(--sidebar-background))",

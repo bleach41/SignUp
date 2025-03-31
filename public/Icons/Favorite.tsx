@@ -8,6 +8,10 @@ function FavoriteIcon(props: React.SVGProps<SVGSVGElement>) {
             height={20}
             viewBox="0 0 18 20"
             fill="none"
+            style={{
+                width: '18px',
+                height: '20px'
+            }}
             {...props}
         >
             {/* Marcador (fondo) */}

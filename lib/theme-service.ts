@@ -4,13 +4,14 @@ export type DynamicThemeColors = {
   background: string;
   backgroundSecondary: string;
   foreground: string;
-
+  searchBackground: string;
   // Componentes específicos
   navbar: {
     background: string;
     backgroundSecondary: string;
     foreground: string;
     shadow: string;
+    text: string;
   };
   sidebar: {
     background: string;
@@ -65,8 +66,9 @@ export const mockThemes: Record<string, DynamicTheme> = {
     name: "Ocean Blue",
     colors: {
       // Colores base
-      background: "210 50% 25%",
+      background: "240 14.29% 13.37%",
       backgroundSecondary: "240 14.29% 11.37%",
+      searchBackground: "#1C202B",
       foreground: "0 0% 98%",
 
       // Componentes específicos
@@ -74,8 +76,9 @@ export const mockThemes: Record<string, DynamicTheme> = {
         background: "linear-gradient(152deg, #21242D 17.38%, #1C1F28 82.62%)",
         backgroundSecondary:
           "linear-gradient(180deg, #343A47 0%, #2C3140 100%)",
-        foreground: "0 0% 98%",
+        foreground: "#fff",
         shadow: "0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset",
+        text: "#919399",
       },
       sidebar: {
         background: "linear-gradient(180deg, #171A23 0%, #181B24 100%)",
@@ -126,14 +129,15 @@ export const mockThemes: Record<string, DynamicTheme> = {
       background: "20 50% 10%",
       backgroundSecondary: "20 40% 15%",
       foreground: "0 0% 98%",
-
+      searchBackground: "#1C202B",
       // Componentes específicos
       navbar: {
         background:
           "linear-gradient(152deg, hsl(20 60% 20%) 17.38%, hsl(20 60% 15%) 82.62%)",
         backgroundSecondary: "20 40% 15%",
-        foreground: "0 0% 98%",
+        foreground: "210 2.04% 58.82%",
         shadow: "3px 3px 10px 10px hsl(0, 100%, 10.37%)",
+        text: "#919399",
       },
       sidebar: {
         background:
@@ -227,7 +231,7 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
     theme.colors.backgroundSecondary
   );
   root.style.setProperty("--foreground", theme.colors.foreground);
-
+  root.style.setProperty("--search-background", theme.colors.searchBackground);
   // Aplicar colores de componentes específicos
   root.style.setProperty("--navbar-background", theme.colors.navbar.background);
   root.style.setProperty(
@@ -236,7 +240,7 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
   );
   root.style.setProperty("--navbar-foreground", theme.colors.navbar.foreground);
   root.style.setProperty("--navbar-shadow", theme.colors.navbar.shadow);
-
+  root.style.setProperty("--navbar-text", theme.colors.navbar.text);
   root.style.setProperty(
     "--sidebar-background",
     theme.colors.sidebar.background
