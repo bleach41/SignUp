@@ -14,6 +14,7 @@ export type DynamicThemeColors = {
   };
   sidebar: {
     background: string;
+    backgroundSecondary: string;
     foreground: string;
     shadow: string;
     hoverBackground: string;
@@ -21,6 +22,7 @@ export type DynamicThemeColors = {
   };
 
   // Colores de acento
+  buttonBackground: string;
   primary: string;
   primaryForeground: string;
   secondary: string;
@@ -77,17 +79,21 @@ export const mockThemes: Record<string, DynamicTheme> = {
       },
       sidebar: {
         background: "linear-gradient(180deg, #171A23 0%, #181B24 100%)",
-        foreground: "0 0% 98%",
+        backgroundSecondary:
+          "linear-gradient(180deg, #1E222C 0%, #1C202A 100%)",
+        foreground: "210 2.94% 58.82%",
         shadow: "0px 0px 12px rgba(16, 19, 26, 0.32)",
         hoverBackground: "210 50% 25%",
         activeBackground: "210 50% 25%",
       },
 
       // Colores de acento
+      buttonBackground:
+        "radial-gradient(123.83% 99.06% at 49.75% 0%, #6A7EFF 0%, #4962FF 48.44%, #3A55FF 100%)",
       primary: "195 85% 55%",
       primaryForeground: "0 0% 10%",
       secondary: "210 40% 25%",
-      secondaryForeground: "0 0% 98%",
+      secondaryForeground: "#fff",
       muted: "210 30% 25%",
       mutedForeground: "210 20% 70%",
       border: "210 15.38% 20.76%",
@@ -132,17 +138,21 @@ export const mockThemes: Record<string, DynamicTheme> = {
       sidebar: {
         background:
           "linear-gradient(180deg, hsl(20 60% 25%) 0%, hsl(20 60% 15%) 100%)",
-        foreground: "0 0% 98%",
+        backgroundSecondary:
+          "linear-gradient(180deg, #343A47 0%, #2C3140 100%)",
+        foreground: "210 2.94% 50.82%",
         shadow: "0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset",
         hoverBackground: "20 50% 25%",
         activeBackground: "20 50% 25%",
       },
 
       // Colores de acento
+      buttonBackground:
+        "radial-gradient(123.83% 99.06% at 49.75% 0%, #6A7EFF 0%, #4962FF 48.44%, #3A55FF 100%)",
       primary: "30 90% 55%",
       primaryForeground: "0 0% 10%",
       secondary: "20 40% 25%",
-      secondaryForeground: "0 0% 98%",
+      secondaryForeground: "#fff",
       muted: "20 30% 25%",
       mutedForeground: "20 20% 70%",
       border: "120 85.71% 47.06%",
@@ -232,6 +242,10 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
     theme.colors.sidebar.background
   );
   root.style.setProperty(
+    "--sidebar-background-secondary",
+    theme.colors.sidebar.backgroundSecondary
+  );
+  root.style.setProperty(
     "--sidebar-foreground",
     theme.colors.sidebar.foreground
   );
@@ -246,6 +260,7 @@ export function applyDynamicTheme(theme: DynamicTheme): void {
   );
 
   // Aplicar colores de acento
+  root.style.setProperty("--button-background", theme.colors.buttonBackground);
   root.style.setProperty("--primary", theme.colors.primary);
   root.style.setProperty(
     "--primary-foreground",

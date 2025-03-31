@@ -9,7 +9,7 @@ export function RightSidebar({ isExpanded }: RightSidebarProps) {
   return (
     <aside
       className={cn(
-        "h-full flex-shrink-0 flex-col border-l border-border bg-background transition-all duration-300",
+        "h-[calc(100vh-64px)] flex-shrink-0 flex-col border-l border-border bg-background transition-all duration-300 fixed top-0 right-0 mt-16",
         isExpanded ? "w-80" : "w-0 overflow-hidden",
         "flex",
       )}

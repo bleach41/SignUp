@@ -6,6 +6,8 @@ import { Sidebar } from "@/components/layout/sidebar"
 import { Navbar } from "@/components/layout/navbar"
 import { RightSidebar } from "@/components/layout/right-sidebar"
 import { ThemeProvider } from "@/contexts/theme-provider"
+import { cn } from "@/lib/utils"
+
 interface MainLayoutProps {
   children: React.ReactNode
 }
@@ -24,16 +26,22 @@ export function MainLayout({ children }: MainLayoutProps) {
 
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} storageKey="casino-theme">
-      <div className="flex h-screen w-full flex-col bg-background">
+      <div className="flex min-h-screen w-full flex-col bg-background">
         <Navbar
           isExpanded={isExpanded}
           toggleSidebar={toggleSidebar}
           isRightExpanded={isRightExpanded}
           toggleRightSidebar={toggleRightSidebar}
         />
-        <div className="flex h-[calc(100vh-64px)] w-full">
+        <div className="flex flex-1 w-full mt-[76px]">
           <Sidebar isExpanded={isExpanded} />
-          <main className="h-full flex-1 overflow-hidden bg-background-secondary p-4">{children}</main>
+          <main className={cn(
+            "flex-1 overflow-auto bg-background-secondary p-4 transition-all duration-300",
+            isExpanded ? "ml-64" : "ml-20",
+            isRightExpanded ? "mr-80" : "mr-0"
+          )}>
+            {children}
+          </main>
           <RightSidebar isExpanded={isRightExpanded} />
         </div>
       </div>

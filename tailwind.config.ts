@@ -26,7 +26,7 @@ const config = {
         background: "hsl(var(--background))",
         "background-secondary": "hsl(var(--background-secondary))",
         foreground: "hsl(var(--foreground))",
-
+        buttonBackground: "hsl(var(--button-background))",
         // Componentes específicos
         navbar: {
           background: "hsl(var(--navbar-background))",
@@ -36,6 +36,7 @@ const config = {
         },
         sidebar: {
           background: "hsl(var(--sidebar-background))",
+          "background-secondary": "hsl(var(--sidebar-background-secondary))",
           foreground: "hsl(var(--sidebar-foreground))",
           shadow: "hsl(var(--sidebar-shadow))",
           hover: "hsl(var(--sidebar-hover-background))",
@@ -131,7 +132,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
 } satisfies Config;
 
 export default config;
