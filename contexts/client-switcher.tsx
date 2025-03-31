@@ -30,8 +30,15 @@ export function ClientSwitcher() {
           <Building2 className="h-5 w-5" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuLabel>Seleccionar Cliente</DropdownMenuLabel>
+      <DropdownMenuContent
+        className="rounded-2xl"
+        style={{
+          background: 'var(--navbar-background)',
+          border: '1px solid var(--border)',
+          boxShadow: '0px 1px 1px 0px #3F4655 inset'
+        }}
+      >
+        <DropdownMenuLabel className="text-sm text-gray-400 px-2 py-1.5">Seleccionar Cliente</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => handleClientSelect("client-1")}>
           <span
