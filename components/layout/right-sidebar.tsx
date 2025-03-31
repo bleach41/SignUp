@@ -25,10 +25,11 @@ export function RightSidebar({ isExpanded }: RightSidebarProps) {
         <div className="border-t border-border/50 rounded-b-3xl p-1 bg-background">
           {/* Chat input will go here in the future */}
           <Input
-            className="h-10 border-none rounded-full bg-background focus:border-none"
+            className="h-10 border-none rounded-full bg-background focus:border-none placeholder:text-navbar-text"
             placeholder="Escribe un mensaje..."
             style={{
-              backgroundColor: 'var(--background)'
+              backgroundColor: 'var(--background)',
+              color: 'var(--navbar-text)'
             }}
           />
         </div>
