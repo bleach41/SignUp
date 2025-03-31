@@ -6,6 +6,7 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import ThreeCircle from "@/public/Icons/ThreeCircle"
 
 interface SocialIcon {
     icon: React.ReactNode
@@ -20,7 +21,7 @@ interface SidebarSocialProps {
 
 export function SidebarSocial({ isExpanded, socialIcons }: SidebarSocialProps) {
     return (
-        <div className="mt-auto w-full border-t border-sidebar-border/30 p-3">
+        <div className="mt-auto w-full p-3">
             <div className="flex justify-center gap-3">
                 {isExpanded ? (
                     socialIcons.map((social, index) => (
@@ -31,14 +32,8 @@ export function SidebarSocial({ isExpanded, socialIcons }: SidebarSocialProps) {
                 ) : (
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-md bg-gray-800">
-                                <div className="flex items-center justify-center">
-                                    <div className="flex gap-[2px]">
-                                        <div className="h-[3px] w-[3px] rounded-full bg-gray-400"></div>
-                                        <div className="h-[3px] w-[3px] rounded-full bg-gray-400"></div>
-                                        <div className="h-[3px] w-[3px] rounded-full bg-gray-400"></div>
-                                    </div>
-                                </div>
+                            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-md">
+                                <ThreeCircle />
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent side="right" align="start" className="min-w-[120px] p-1 bg-gray-900 border-gray-800">
