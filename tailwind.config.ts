@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 const config = {
   darkMode: ["class"],
@@ -18,6 +19,9 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Jost", "sans-serif"], // Usa Jost como fuente predeterminada
+      },
       colors: {
         border: "hsl(var(--border))",
         "border-secondary": "hsl(var(--border-secondary))",

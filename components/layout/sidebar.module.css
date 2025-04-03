@@ -1,0 +1,12 @@
+.sidebarExpanded {
+  background: var(--sidebar-background);
+  box-shadow: var(--sidebar-shadow);
+  width: var(--w-280-200);
+}
+
+.sidebarCollapsed {
+  background: var(--sidebar-background);
+  box-shadow: var(--sidebar-shadow);
+  width: var(--w-102-80);
+  padding-right: 0.5rem;
+}

@@ -1,3 +1,4 @@
+// lib/theme-service.ts
 // Definición de tipos para temas dinámicos
 export type DynamicThemeColors = {
   // Colores base
@@ -142,8 +143,7 @@ export const mockThemes: Record<string, DynamicTheme> = {
       sidebar: {
         background:
           "linear-gradient(180deg, hsl(20 60% 25%) 0%, hsl(20 60% 15%) 100%)",
-        backgroundSecondary:
-          "linear-gradient(180deg, #343A47 0%, #2C3140 100%)",
+        backgroundSecondary: "linear-gradient(180deg, #012012 0%, #fff 100%)",
         foreground: "210 2.94% 50.82%",
         shadow: "0px 4px 48px 0px rgba(39, 42, 52, 0.24) inset",
         hoverBackground: "20 50% 25%",

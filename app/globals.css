@@ -14,15 +14,58 @@
   --secondary: 0 0% 96.1%;
   --secondary-foreground: 0 0% 9%;
   --muted: 0 0% 96.1%;
-  --muted-foreground: 0 0% 45.1%;
+  --muted-foreground: #919399;
   --accent: 0 0% 96.1%;
   --accent-foreground: 0 0% 9%;
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
+  --badge-background: rgba(33, 42, 55, 0.32);
   --border: 0 0% 89.8%;
   --input: 0 0% 89.8%;
   --ring: 24 100% 63%;
   --radius: 0.5rem;
+  /* variables para el sidebar */
+  --br-button: 12px;
+
+  /* Gradiente para tabs activos */
+  --tab-active-gradient: radial-gradient(
+    123.83% 99.06% at 49.75% 0%,
+    #73defb 0%,
+    #28c5f0 48.44%,
+    #0d91b5 100%
+  );
+
+  /* Variables responsivas */
+  --w-180-100: 140px; /* Escala entre 180px y 100px */
+  /* Border radius */
+  --br-12-6: calc(0.36vw + 4.73px); /* Escala entre 12px y 6px */
+  --br-10-5: calc(0.27vw + 4.48px); /* Escala entre 10px y 5px */
+
+  /* Padding */
+  --p-10-5: calc(0.27vw + 4.48px); /* Escala entre 10px y 5px */
+  --p-15-8: calc(0.43vw + 6.25px); /* Escala entre 15px y 8px */
+  --p-8-6: calc(0.12vw + 5.55px);
+  /* Margins */
+  --m-20-10: calc(0.58vw + 9.12px); /* Escala entre 20px y 10px */
+  --m-15-5: calc(0.58vw + 3.45px); /* Escala entre 15px y 5px */
+
+  /* Widths */
+  --w-300-200: calc(0.06vw + 196.55px); /* Escala entre 300px y 200px */
+  --w-180-100: calc(0.05vw + 97.73px); /* Escala entre 180px y 100px */
+  --w-102-80: calc(1.33vw + 75.03px); /* Escala entre 102px y 80px */
+  --w-280-200: calc(4.82vw + 181.93px); /* Escala entre 280px y 200px */
+  --w-60-50: calc(0.6vw + 47.74px); /* Escala entre 60px y 50px */
+
+  /* Heights */
+  --h-44-30: calc(0.08vw + 26.36px); /* Escala entre 44px y 30px */
+  --h-30-20: calc(0.06vw + 18.18px); /* Escala entre 30px y 20px */
+  --h-58-50: calc(0.48vw + 48.19px); /* Escala entre 58px y 50px */
+  --h-76-50: calc(1.57vw + 44.13px); /* Escala entre 76px y 50px */
+  --h-60-50: calc(0.6vw + 47.74px); /* Escala entre 60px y 50px */
+  --h-70-50: calc(1.2vw + 45.48px); /* Escala entre 60px y 50px */
+  /* Font sizes */
+  --fs-16-14: calc(0.12vw + 13.55px); /* Escala entre 16px y 14px */
+  --fs-12-10: calc(0.12vw + 9.18px); /* Escala entre 12px y 10px */
 }
 
 .dark {
@@ -50,4 +93,3 @@
 body {
   @apply bg-background text-foreground transition-colors duration-200;
 }
-

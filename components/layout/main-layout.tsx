@@ -33,12 +33,12 @@ export function MainLayout({ children }: MainLayoutProps) {
           isRightExpanded={isRightExpanded}
           toggleRightSidebar={toggleRightSidebar}
         />
-        <div className="flex flex-1 w-full mt-[76px]">
+        <div className="flex flex-1 w-full" style={{ marginTop: 'var(--h-76-50)' }}>
           <Sidebar isExpanded={isExpanded} />
           <main className={cn(
             "flex-1 overflow-auto bg-background-secondary p-4 transition-all duration-300",
-            isExpanded ? "ml-64" : "ml-20",
-            isRightExpanded ? "mr-80" : "mr-0"
+            isExpanded ? "ml-[var(--w-280-200)]" : "ml-[var(--w-102-80)]",
+            isRightExpanded ? "mr-[var(--w-300-200)]" : "mr-0"
           )}>
             {children}
           </main>

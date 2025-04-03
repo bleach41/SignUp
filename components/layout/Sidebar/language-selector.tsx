@@ -40,7 +40,9 @@ export function LanguageSelector({ onToggle }: LanguageSelectorProps) {
         icon: (
             <div
                 className="rounded-xl shadow-[0px_2px_1px_#3F4655_inset] h-11 w-11 flex items-center justify-center"
-                style={{ background: 'var(--navbar-background-secondary)' }}
+                style={{
+                    background: 'var(--navbar-background-secondary)',
+                }}
             >
                 {selectedLanguage.icon}
             </div>
